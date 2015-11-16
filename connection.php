@@ -10,6 +10,7 @@ $table ='babydata';
 $conn = @mysql_connect($db_host, $db_user, $db_pwd) or
 die("cant select database ");
 
+
 if (!mysql_select_db($database))
 die("cant select database");
 ?>
