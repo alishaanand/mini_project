@@ -20,6 +20,7 @@ print <<<HERE
 </div>
 </form>
 HERE;
+
 include("connection.php");
 if(isset($_POST['submit']))
 {
