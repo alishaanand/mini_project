@@ -13,6 +13,7 @@ print <<< HERE
 <h3>$search is present $number times</h3> 
 <table cellpadding="15">
 HERE;
+
 while($row=@mysql_fetch_array($result))
 {
      echo "id: " . $row["given_name"]. "<br>";
