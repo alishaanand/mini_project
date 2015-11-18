@@ -40,7 +40,6 @@ if(isset($_POST['submit']))
 	  echo " $id". $res["given_name"]. "<br>";
 		$id++;
 	}
-
 }
 ?>
 
