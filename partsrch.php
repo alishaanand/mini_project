@@ -14,6 +14,7 @@ print <<< HERE
 <table cellpadding="15">
 HERE;
 
+
 while($row=@mysql_fetch_array($result))
 {
      echo "id: " . $row["given_name"]. "<br>";
