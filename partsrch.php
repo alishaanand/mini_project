@@ -1,24 +1,29 @@
+
+    
 <?php 
 include"connect.php";
 if(isset($_POST['search']))
 {
 $search=$_POST['search'];
-$sql="SELECT * from babyname WHERE given_name = ' " .@mysql_real_escape_string( $_GET['search'] )."'";
+$sql="SELECT given_name from names WHERE given_name LIKE '".$search."%'";
 $result=@mysql_query($sql) or die(@mysql_error());
 $number =@mysql_num_rows($result);
-echo ".$number.";
 include"home.php";
 print <<< HERE
 <h2>RESULT</h2>
-<h3>$search is present $number times</h3> 
+<h3> $number $search EXISTS IN DATABASE</h3> 
 <table cellpadding="15">
 HERE;
+$id=1;
 
-
-while($row=@mysql_fetch_array($result))
-{
-     echo "id: " . $row["given_name"]. "<br>";
-    
-}
+	echo"<div><table class='table'><thead><tr><th>S.No</th><th>Name</th></tr></thread><tbody> ";
+	while($res=mysql_fetch_array($result))
+	{
+		echo " ";
+	  echo " <tr><td>".$id."</td><td>".$res["given_name"]."</td></tr>";
+		$id++;
+	}
+	echo"</tbody></table></div>";
+	
 }
 ?>
