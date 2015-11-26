@@ -1,15 +1,21 @@
 <?php
-include"baby.php";
+include"main.php";
 print <<<HERE
-<h2 align="center"> Required Fields </h2>
-<form id="my form" align="center" method="post">
+<h2> Fields Required </h2>
+<form id="my form" method="post">
 <div>
 <label for="year">Year:</label>
 <input type="text" name="year" required="required">
 </div>
+<div>..</div>
 <div>
 <label for="name">Name:</label>
 <input type="text" name="name" required="required">
+</div>
+<div>..</div>
+<div>
+<label for="name">Gender:</label>
+<input type="text" name="gender" required="required">
 </div>
 <div id="my submit">
 <input type="submit" name="submit" value="submit">
@@ -21,9 +27,10 @@ HERE;
 if(isset($_POST['submit'])){
   $name=$_POST['name'];
   $year=$_POST['year'];
-include"connection.php";
+  $gender=$_POST['gender'];
+include"cnt.php";
 
-$sth = @mysql_query("SELECT * FROM baby WHERE given_name='$name' AND year BETWEEN '$year' AND '2013' ");
+$sth = @mysql_query("SELECT * FROM baby WHERE given_name='$name' and gender='$gender' AND year BETWEEN '$year' AND '2013' ");
 
 
 $rows = array();
@@ -73,7 +80,7 @@ $jsonTable = json_encode($table);
     
       var data = new google.visualization.DataTable(<?=$jsonTable?>);
       var options = {
-           title: ' Name Popularity',
+           title: 'Popularity',
           is3D: 'true',
           width: 800,
           height: 600
