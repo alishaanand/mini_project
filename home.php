@@ -25,8 +25,8 @@ h2{
 			<div class="container">
 				<h2 align="center"><font color="black">BABY  NAME  FINDER</font></h2>
 				<ul class="nav nav-tabs">
-				<li class="active"> <a href="main.php">HOME</a></li>
-				<li class="active"><a href="top.php">TOP</a></li>
+				<li class="active"> <a href="home.php">HOME</a></li>
+				<li class="active"><a href="topname.php">TOP</a></li>
 				<li class="active"><a href="graph.php">POPULARITY</a></li>
 				<li class="active"><a href="about.php">ABOUT</a></li>
 				</ul>
@@ -34,7 +34,7 @@ h2{
 			<h2 align="center"><font color="black">Please read ABOUT before proceeding</font></h2>	
 		<div>
 		
-						<form align="center" method="post" action="ptsh.php">
+						<form align="center" method="post" action="partsrch.php">
 							Partial search:<input type="text" name="search" required="required" />
 							<input type="submit" name="submit" value="search">
 							</form>
