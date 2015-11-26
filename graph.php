@@ -1,5 +1,5 @@
 <?php
-include"main.php";
+include"home.php";
 print <<<HERE
 <h2> Fields Required </h2>
 <form id="my form" method="post">
@@ -28,9 +28,9 @@ if(isset($_POST['submit'])){
   $name=$_POST['name'];
   $year=$_POST['year'];
   $gender=$_POST['gender'];
-include"cnt.php";
+include"connect.php";
 
-$sth = @mysql_query("SELECT * FROM baby WHERE given_name='$name' and gender='$gender' AND year BETWEEN '$year' AND '2013' ");
+$sth = @mysql_query("SELECT * FROM names WHERE given_name='$name' and gender='$gender' AND year BETWEEN '$year' AND '2013' ");
 
 
 $rows = array();
